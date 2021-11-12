@@ -25,7 +25,7 @@ class XylophoneApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: "Xylophone App",
-      theme: ThemeData(),
+      theme: ThemeData.dark(),
       home: Scaffold(
           appBar: AppBar(
             title: Center(
