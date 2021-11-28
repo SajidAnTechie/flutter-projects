@@ -3,14 +3,14 @@ import 'package:pokedexapp/provider/pokemon_provider.dart';
 import 'package:pokedexapp/screen/pokemon_list_item.dart';
 import 'package:provider/provider.dart';
 
-class PokemonListScrenn extends StatefulWidget {
-  const PokemonListScrenn({Key key}) : super(key: key);
+class PokemonListScreen extends StatefulWidget {
+  const PokemonListScreen({Key key}) : super(key: key);
 
   @override
-  _PokemonListScrennState createState() => _PokemonListScrennState();
+  _PokemonListScreenState createState() => _PokemonListScreenState();
 }
 
-class _PokemonListScrennState extends State<PokemonListScrenn> {
+class _PokemonListScreenState extends State<PokemonListScreen> {
   bool _isInit = true;
   Future _fetchData;
 

@@ -22,7 +22,7 @@ class PokerMonApp extends StatelessWidget {
         theme: ThemeData(
           primaryColor: Colors.white,
         ),
-        home: PokemonListScrenn(),
+        home: PokemonListScreen(),
       ),
     );
   }
