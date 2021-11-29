@@ -19,7 +19,7 @@ class PokemonListItem extends StatelessWidget {
               context,
               MaterialPageRoute(
                   builder: (ctx) => PokemonDetailScreen(
-                        pokemon: pokemon,
+                        id: pokemon.id,
                       )));
         },
         child: Padding(

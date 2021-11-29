@@ -6,7 +6,6 @@ import 'package:pokedexapp/model/pokemon_model.dart';
 
 class PokemonProvider with ChangeNotifier {
   List<PokemonModel> _pokemonList = [];
-
   List<PokemonModel> get pokemonList => _pokemonList;
 
   Future<void> getPokemonData() async {
@@ -22,5 +21,9 @@ class PokemonProvider with ChangeNotifier {
     } catch (err) {
       print(err);
     }
+  }
+
+  PokemonModel getPokemonById(String id) {
+    return _pokemonList.firstWhere((pokemon) => pokemon.id == id);
   }
 }
