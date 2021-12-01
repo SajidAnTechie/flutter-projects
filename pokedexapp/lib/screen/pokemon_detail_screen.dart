@@ -114,7 +114,7 @@ class PokemonDetailScreen extends StatelessWidget {
                     SingleChildScrollView(
                         child: EvolutionTab(pokemon: selectedPokemon)),
                     SingleChildScrollView(
-                        child: BaseMoveTabe(pokemon: selectedPokemon)),
+                        child: BaseMoveTab(pokemon: selectedPokemon)),
                   ]),
                 ),
               ),
