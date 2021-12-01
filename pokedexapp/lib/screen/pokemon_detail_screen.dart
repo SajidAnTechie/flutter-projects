@@ -13,7 +13,7 @@ class PokemonDetailScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final selectedPokemon =
-        Provider.of<PokemonProvider>(context, listen: false).getPokemonById(id);
+        Provider.of<PokemonProvider>(context).getPokemonById(id);
     return Scaffold(
       backgroundColor: PokemonUtils.getColor(selectedPokemon),
       appBar: AppBar(
@@ -21,10 +21,18 @@ class PokemonDetailScreen extends StatelessWidget {
         backgroundColor: PokemonUtils.getColor(selectedPokemon),
         actions: [
           IconButton(
-              onPressed: () {},
+              onPressed: () {
+                Provider.of<PokemonProvider>(context, listen: false)
+                    .toogleFavourite(selectedPokemon.id);
+              },
               icon: Icon(
-                Icons.favorite_border,
+                selectedPokemon.isFavourite
+                    ? Icons.favorite
+                    : Icons.favorite_border,
                 size: 30,
+                color: selectedPokemon.isFavourite
+                    ? Colors.red.shade700
+                    : Colors.white,
               ))
         ],
       ),

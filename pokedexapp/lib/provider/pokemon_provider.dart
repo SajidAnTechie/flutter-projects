@@ -8,6 +8,8 @@ class PokemonProvider with ChangeNotifier {
   List<PokemonModel> _pokemonList = [];
   List<PokemonModel> get pokemonList => _pokemonList;
 
+  List<PokemonModel> favouriteList = [];
+
   Future<void> getPokemonData() async {
     try {
       var url = Uri.parse(
@@ -25,5 +27,17 @@ class PokemonProvider with ChangeNotifier {
 
   PokemonModel getPokemonById(String id) {
     return _pokemonList.firstWhere((pokemon) => pokemon.id == id);
+  }
+
+  void toogleFavourite(String id) {
+    int index = _pokemonList.indexWhere((pokemon) => pokemon.id == id);
+
+    _pokemonList[index].isFavourite = !_pokemonList[index].isFavourite;
+    notifyListeners();
+  }
+
+  void getFavouriteList() {
+    favouriteList =
+        _pokemonList.where((pokemon) => pokemon.isFavourite == true).toList();
   }
 }

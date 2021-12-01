@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:pokedexapp/provider/pokemon_provider.dart';
+import 'package:pokedexapp/screen/pokemon_favouriteList.dart';
 import 'package:pokedexapp/screen/pokemon_list_item.dart';
 import 'package:provider/provider.dart';
 
@@ -36,7 +37,11 @@ class _PokemonListScreenState extends State<PokemonListScreen> {
         actions: [
           IconButton(onPressed: () {}, icon: Icon(Icons.search, size: 30)),
           IconButton(
-              onPressed: () {}, icon: Icon(Icons.favorite_border, size: 30))
+              onPressed: () {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (ctx) => FavouriteList()));
+              },
+              icon: Icon(Icons.favorite_border, size: 30))
         ],
       ),
       body: FutureBuilder(

@@ -71,16 +71,16 @@ class PokemonListItem extends StatelessWidget {
                           .toList(),
                     ),
                   ),
-                  Hero(
-                    tag: "pokemon${pokemon.id}",
-                    child: Expanded(
-                      flex: 3,
+                  Expanded(
+                    flex: 3,
+                    child: Hero(
+                      tag: "pokemon${pokemon.id}",
                       child: Image.network(
                         pokemon.imageUrl,
                         height: 100,
                       ),
                     ),
-                  )
+                  ),
                 ],
               ),
             ],
