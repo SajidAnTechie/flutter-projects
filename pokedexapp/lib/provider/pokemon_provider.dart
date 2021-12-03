@@ -40,4 +40,12 @@ class PokemonProvider with ChangeNotifier {
     favouriteList =
         _pokemonList.where((pokemon) => pokemon.isFavourite == true).toList();
   }
+
+  List<PokemonModel> getSearchResults(String query) {
+    final results = _pokemonList
+        .where((pokemon) =>
+            pokemon.name.toLowerCase().startsWith(query.toLowerCase()))
+        .toList();
+    return results;
+  }
 }
