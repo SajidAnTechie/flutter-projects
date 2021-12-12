@@ -4,11 +4,11 @@ import 'package:pokedexapp/screen/pokemon_list_screen.dart';
 import 'package:provider/provider.dart';
 
 void main() {
-  runApp(PokerMonApp());
+  runApp(PokeMonApp());
 }
 
-class PokerMonApp extends StatelessWidget {
-  const PokerMonApp({Key key}) : super(key: key);
+class PokeMonApp extends StatelessWidget {
+  const PokeMonApp({Key key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
